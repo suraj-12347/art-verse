@@ -20,7 +20,7 @@ import post18 from "./post18.jpg";
 import post19 from"./post19.jpg";
 import post20 from "./post20.jpg";
 
-const posts = [
+export const posts = [
     {
       id: 1,
       image: post1,
@@ -165,6 +165,149 @@ const posts = [
       ]
     },
     {
+      id: 21,
+      image: post1,
+      title: "Sunset Bliss",
+      createdBy: { name: "Aarav Sharma", profileImage: "https://randomuser.me/api/portraits/men/1.jpg" },
+      mood: "Peaceful",
+      category: "Landscape",
+      description: "Golden hues of the sunset blending with the calm ocean.",
+      buyLink: "https://example.com/post1",
+      likes: 120,
+      comments: [
+        { user: "Riya", text: "Wow! This feels so calming 🌅" },
+        { user: "Kabir", text: "Amazing color blend!" }
+      ]
+    },
+    {
+      id: 22,
+      image: post2,
+      title: "Mountain Serenity",
+      createdBy: { name: "Riya Kapoor", profileImage: "https://randomuser.me/api/portraits/women/2.jpg" },
+      mood: "Calm",
+      category: "Nature",
+      description: "Snow-capped mountains with soft sunlight and clouds.",
+      buyLink: "https://example.com/post2",
+      likes: 89,
+      comments: [
+        { user: "Neha", text: "Reminds me of Manali trip ❄️" },
+        { user: "Arjun", text: "Beautiful shot!" }
+      ]
+    },
+    {
+      id: 23,
+      image: post3,
+      title: "Abstract Dreams",
+      createdBy: { name: "Kabir Verma", profileImage: "https://randomuser.me/api/portraits/men/3.jpg" },
+      mood: "Dreamy",
+      category: "Abstract",
+      description: "Colorful abstract shapes representing imagination.",
+      buyLink: "https://example.com/post3",
+      likes: 145,
+      comments: [
+        { user: "Meera", text: "Love this abstract vibe 🎨" }
+      ]
+    },
+    {
+      id: 24,
+      image: post4,
+      title: "City Lights",
+      createdBy: { name: "Neha Joshi", profileImage: "https://randomuser.me/api/portraits/women/4.jpg" },
+      mood: "Energetic",
+      category: "Urban",
+      description: "A lively cityscape glowing with neon lights.",
+      buyLink: "https://example.com/post4",
+      likes: 200,
+      comments: [
+        { user: "Ishaan", text: "Feels like cyberpunk 🔥" },
+        { user: "Simran", text: "Love the glow ✨" }
+      ]
+    },
+    {
+      id: 25,
+      image: post5,
+      title: "Ocean Wave",
+      createdBy: { name: "Ishaan Mehta", profileImage: "https://randomuser.me/api/portraits/men/5.jpg" },
+      mood: "Refreshing",
+      category: "Seascape",
+      description: "Mighty waves crashing against the rocks at dawn.",
+      buyLink: "https://example.com/post5",
+      likes: 78,
+      comments: [
+        { user: "Aditi", text: "Ocean vibes 🌊" }
+      ]
+    },
+    {
+      id: 26,
+      image: post6,
+      title: "Mystic Forest",
+      createdBy: { name: "Meera Singh", profileImage: "https://randomuser.me/api/portraits/women/6.jpg" },
+      mood: "Mysterious",
+      category: "Nature",
+      description: "A foggy forest trail that feels otherworldly.",
+      buyLink: "https://example.com/post6",
+      likes: 96,
+      comments: [
+        { user: "Raghav", text: "Scary but beautiful!" }
+      ]
+    },
+    {
+      id: 27,
+      image: post7,
+      title: "Lotus Peace",
+      createdBy: { name: "Dev Sharma", profileImage: "https://randomuser.me/api/portraits/men/7.jpg" },
+      mood: "Spiritual",
+      category: "Floral",
+      description: "A lotus blooming gracefully in calm water.",
+      buyLink: "https://example.com/post7",
+      likes: 134,
+      comments: [
+        { user: "Simran", text: "Symbol of purity 🌸" }
+      ]
+    },
+    {
+      id: 28,
+      image: post8,
+      title: "Desert Mirage",
+      createdBy: { name: "Aditi Chauhan", profileImage: "https://randomuser.me/api/portraits/women/8.jpg" },
+      mood: "Lonely",
+      category: "Landscape",
+      description: "A vast desert with golden sands and a mirage illusion.",
+      buyLink: "https://example.com/post8",
+      likes: 52,
+      comments: [
+        { user: "Tanvi", text: "Feels so empty but aesthetic ✨" }
+      ]
+    },
+    {
+      id: 29,
+      image: post9,
+      title: "Vintage Memories",
+      createdBy: { name: "Raghav Malhotra", profileImage: "https://randomuser.me/api/portraits/men/9.jpg" },
+      mood: "Nostalgic",
+      category: "Portrait",
+      description: "A vintage-style painting reminding of old times.",
+      buyLink: "https://example.com/post9",
+      likes: 175,
+      comments: [
+        { user: "Krishna", text: "So retro 💖" }
+      ]
+    },
+    {
+      id: 30,
+      image: post10,
+      title: "Cosmic Flow",
+      createdBy: { name: "Simran Kaur", profileImage: "https://randomuser.me/api/portraits/women/10.jpg" },
+      mood: "Ethereal",
+      category: "Abstract",
+      description: "Swirling galaxies and cosmic energies in colors.",
+      buyLink: "https://example.com/post10",
+      likes: 210,
+      comments: [
+        { user: "Manav", text: "Outer space vibes 🚀" }
+      ]
+    },
+    {
       id: 11,
       image: post11,
       title: "Street Melody",
@@ -192,6 +335,7 @@ const posts = [
         { user: "Harshit", text: "So peaceful ❄️" }
       ]
     },
+    
     {
       id: 13,
       image: post13,
@@ -242,7 +386,8 @@ const posts = [
       mood: "Warm",
       category: "Portrait",
       description: "Soft sunlight"
-    }
+    },
+    
 ]  
 
-export default posts;
+

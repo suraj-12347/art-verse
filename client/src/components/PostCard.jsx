@@ -1,11 +1,17 @@
-import React from 'react'
+// src/components/Post.jsx
+import React from "react";
 
-const PostCard = () => {
+const Post = ({ post }) => {
   return (
-    <div>
-      
+    <div className="w-full rounded-lg overflow-hidden shadow-md">
+      <img
+        src={post.image}
+        alt="post"
+        className="w-full object-cover"
+      />
     </div>
-  )
-}
+  );
+};
 
-export default PostCard
+
+export default Post;

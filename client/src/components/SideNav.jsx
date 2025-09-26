@@ -30,7 +30,7 @@ const SideNav = () => {
         <img src={logo} alt="logo" className="w-28 h-20 mb-20" />
 
         {/* Top Nav Items */}
-        <ul className="flex flex-col items-center gap-10">
+        <ul className="flex flex-col items-center gap-10 mx-auto">
           {topNavItems.map((item, idx) => {
             const Icon = item.icon;
             return (

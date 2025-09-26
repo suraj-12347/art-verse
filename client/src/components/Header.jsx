@@ -26,9 +26,9 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed w-full top-0 pt-8 pb-2 left-38  bg-white flex  items-center px-6 z-[150] gap-4 h-22 ">
+    <header className="fixed xl:w-full  2xl:w-full lg:w-[95%]  md:w-[90%] top-0 pt-8 pb-2 left-38  bg-white flex  items-center px-6 z-[150] gap-4 md:gap-2 2xl:gap-5 h-22 ">
       {/* Search Box */}
-      <div className="flex items-center bg-[var(--bg)] px-4 py-2 rounded-full w-full max-w-5xl h-12">
+      <div className="flex items-center bg-[var(--bg)] px-4 py-2  rounded-full w-full max-w-[85%] h-12">
         <FaSearch className="text-[var(--primary)] mr-2" />
         <input
           type="text"

@@ -11,4 +11,21 @@
   --accent: #1ABC9C;
 }
 
+/* global.css ya index.css me add karo */
+/* global.css ya index.css me add karo */
+::-webkit-scrollbar {
+  width: 8px;          /* only vertical scrollbar width */
+  height: 0;           /* horizontal scrollbar hide */
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6; /* track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary); /* primary color */
+  border-radius: 10px;
+  border: 2px solid #f3f4f6;
+}
+
 

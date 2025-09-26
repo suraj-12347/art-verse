@@ -57,7 +57,7 @@ function Layout() {
 
 const App = () => {
   return (
-    <main className='w-[80%] ml-45 pl-0 mt-23  bg-[var(--bg)]'>
+    <main className='w-[85%] ml-45 pl-0 mt-23  bg-[var(--bg)]'>
     
     <Routes>
       <Route element={<Layout/>}>
