@@ -1,6 +1,7 @@
 import React from 'react'
+import PrivateRoute from "./components/PrivateRoute";
 // Layout.jsx
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 
 import { Outlet } from "react-router-dom";
@@ -14,6 +15,10 @@ import ExplorePage from './pages/ExplorePage'
 import HomePage from './pages/HomePage'
 import ProfilePage from './pages/ProfilePage';
 import UploadPage from './pages/UploadPage'
+import Notifications from './pages/Notifications';
+
+
+
 
 
 
@@ -21,10 +26,13 @@ import UploadPage from './pages/UploadPage'
 
 
 function Layout() {
+  const location = useLocation(); // ✅ Current route
+  const isHome = location.pathname === "/home"; // ✅ Check if on /home
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Desktop/Tab Sidebar */}
-      <aside className="hidden md:flex   ">
+      <aside className="hidden md:flex">
         <SideNav />
       </aside>
 
@@ -35,10 +43,12 @@ function Layout() {
           <Header />
         </header>
 
-        {/* Mobile Header */}
-        <header className="md:hidden">
-          <MobileHeader />
-        </header>
+        {/* Mobile Header only on /home */}
+        {isHome && (
+          <header className="md:hidden">
+            <MobileHeader />
+          </header>
+        )}
 
         {/* Page Content */}
         <main className="overflow-y-auto">
@@ -55,25 +65,29 @@ function Layout() {
 }
 
 
+
+
+
 const App = () => {
   return (
-    <main className='w-[85%] ml-45 pl-0 mt-23  bg-[var(--bg)]'>
+    <main className='w-[98%]  bg-[var(--bg)]'>
     
     <Routes>
-      <Route element={<Layout/>}>
-      <Route path='/' element={<Navigate to='/home'/>}/>
-      <Route path='/home' element={<HomePage/>}/>
-      <Route path='/explore' element={<ExplorePage/>}/>
-      <Route path='/challange' element={<ChallangePage/>}/>
-      <Route path='/aichatbot' element={<Aichatbot/>}/>
-      <Route path='/profile' element={<ProfilePage/>}/>
-      <Route path='/uploade' element={<UploadPage/>}/>
-     
+  <Route path="/log-in" element={<LandingPage />} />
 
-      </Route>
-      <Route path='/log-in' element={<LandingPage/>}/>
+  {/* Protected Routes */}
+  <Route element={<PrivateRoute><Layout /></PrivateRoute>}>
+    <Route path="/" element={<Navigate to="/home" />} />
+    <Route path="/home" element={<HomePage />} />
+    <Route path="/explore" element={<ExplorePage />} />
+    <Route path="/challange" element={<ChallangePage />} />
+    <Route path="/aichatbot" element={<Aichatbot />} />
+    <Route path="/profile" element={<ProfilePage />} />
+    <Route path="/uploade" element={<UploadPage />} />
+    <Route path="/notifications" element={<Notifications />} />
+  </Route>
+</Routes>
 
-    </Routes>
 
    </main>
   )

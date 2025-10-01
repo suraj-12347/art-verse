@@ -2,6 +2,11 @@
 
 @tailwind utilities;
 
+*{
+  font-family: "Alan Sans", sans-serif;
+ 
+}
+
 /* Optional: apni custom variables */
 :root {
   --primary: #8A2BE2;
@@ -27,5 +32,28 @@
   border-radius: 10px;
   border: 2px solid #f3f4f6;
 }
+
+html, body {
+  -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
+  scrollbar-width: none; /* Firefox hide scrollbar */
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome/Edge hide scrollbar */
+}
+/* Mobile only */
+@media (max-width: 768px) {
+  /* For main scroll container */
+  main {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+
+  main::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}
+
+
 
 

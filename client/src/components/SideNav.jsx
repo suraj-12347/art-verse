@@ -6,17 +6,22 @@ import {
   FaHome, 
   FaSearch, 
   FaPlusCircle, 
-  FaTrophy, 
+  FaPalette, 
   FaRobot, 
-  FaCog
+  FaCog,
+  FaBell
 } from "react-icons/fa";
+
+
 
 const topNavItems = [
   { label: "Home", icon: FaHome, href: "/home" },
   { label: "Explore", icon: FaSearch, href: "/explore" },
   { label: "Upload", icon: FaPlusCircle, href: "/upload" },
-  { label: "Challenge", icon: FaTrophy, href: "/challange" },
+  { label: "Challenge", icon: FaPalette, href: "/challange" },
   { label: "AI Assistant", icon: FaRobot, href: "/aichatbot" },
+  { label: "Notifications", icon: FaBell, href: "/notifications" },
+
 ];
 
 const bottomNavItem = { label: "Setting", icon: FaCog, href: "/setting" };
@@ -27,7 +32,7 @@ const SideNav = () => {
       {/* Logo + Top Nav */}
       <div className="flex flex-col items-center">
         {/* Logo */}
-        <img src={logo} alt="logo" className="w-28 h-20 mb-20" />
+        <img src={logo} alt="logo" className="w-30 h-20 mb-15" />
 
         {/* Top Nav Items */}
         <ul className="flex flex-col items-center gap-10 mx-auto">

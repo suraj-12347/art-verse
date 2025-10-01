@@ -1,0 +1,79 @@
+/* Fonts & root variables */
+.login-page * {
+    font-family: "Alan Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    
+  }
+
+  
+  
+
+  
+  /* Mandala animation */
+  .artverse::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 1;
+    left: 50px !important;
+    width: 300px !important;
+    height: 300px !important;
+    background: url('../assets/mandala.png') no-repeat center center !important;
+    background-size: contain !important;
+    z-index: 1;
+    animation: mandal-rotate linear 10s infinite ;
+    transition: 2s;
+  }
+
+  .art-verse {
+    width: 600px !important;
+  
+    
+  }
+  
+  /* Keyframes */
+  @keyframes mandal-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 1440px) {
+    .login-page .artverse::after {
+      top: 1;
+      left: -50px;
+      width: 300px;
+      height: 300px;
+    }
+  }
+  
+  @media (max-width: 1025px) {
+    .spining-logo{
+        display: none;
+    }
+    .login-page {
+      flex-direction: column !important;
+    }
+    .login-page .artverse::after {
+      top: -90px !important;
+      left: 0px !important;
+      width: 300px!important;
+      height: 300px!important;
+    }
+    .art-verse {
+      width: 300px !important;
+      height: 150px !important;
+      margin-top: 4rem !important;
+    }
+    .login-page .body-2 {
+      height: 100vh !important;
+      margin: 0 20px !important;
+    }
+   
+  }
+  @media (max-width: 500px) {
+    
+    .spining-logo{
+        display: none;
+    }
+}
