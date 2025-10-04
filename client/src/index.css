@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@tailwind utilities;
+
 
 *{
   font-family: "Alan Sans", sans-serif;
@@ -52,6 +52,24 @@ body::-webkit-scrollbar {
   main::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
   }
+}
+
+/*medea querry for upload page */
+    
+@media (max-width: 500px) {
+    
+  .upload{
+   padding: 15px !important;
+   margin: 0 !important;
+   flex-direction: column;
+   width: 100%;
+   gap: 20px;
+   height: 150vh;
+   
+
+
+  }
+
 }
 
 

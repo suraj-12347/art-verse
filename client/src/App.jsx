@@ -83,7 +83,7 @@ const App = () => {
     <Route path="/challange" element={<ChallangePage />} />
     <Route path="/aichatbot" element={<Aichatbot />} />
     <Route path="/profile" element={<ProfilePage />} />
-    <Route path="/uploade" element={<UploadPage />} />
+    <Route path="/upload" element={<UploadPage />} />
     <Route path="/notifications" element={<Notifications />} />
   </Route>
 </Routes>
