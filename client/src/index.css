@@ -38,7 +38,7 @@ html, body {
   scrollbar-width: none; /* Firefox hide scrollbar */
 }
 body::-webkit-scrollbar {
-  display: none; /* Chrome/Edge hide scrollbar */
+  display: hidden; /* Chrome/Edge hide scrollbar */
 }
 /* Mobile only */
 @media (max-width: 768px) {
@@ -64,7 +64,7 @@ body::-webkit-scrollbar {
    flex-direction: column;
    width: 100%;
    gap: 20px;
-   height: 150vh;
+   height: 180vh;
    
 
 
@@ -72,6 +72,63 @@ body::-webkit-scrollbar {
 
 }
 
+@media (max-width: 500px) {
+    
+  .post-page{
+   padding: 0 !important;
+   padding-top: 5px !important;
+   margin: 0 !important;
+   flex-direction: column;
+   height: 135vh;
+   
+   
+   
+   
 
+
+  }
+  .post-page-image{
+   
+  }
+
+}
+
+@media (max-width: 500px) {
+    
+  .profile-page{
+   padding: 0 !important;
+   margin: 0 !important;
+   
+   
+
+
+  }
+  .profile-header{
+    display: flex;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 500px) {
+    
+  .challange-page{
+   padding: 0 !important;
+   margin: 0 !important;
+   width: 100% !important;
+  
+   height: 180vh;
+   
+   
+
+
+  }
+  .challange-page-content{
+    margin: 0 !important;
+    
+  }
+ 
+
+}
 
 

@@ -38,7 +38,7 @@ const BottomNav = () => {
 
       {/* Profile */}
       <div className="relative group flex flex-col items-center">
-        <NavLink to="/profile">
+        <NavLink to="/profile/:id">
           <img
             src={profilePic}
             alt="Profile"

@@ -1,16 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../assets/artverse.png";
-import { FaRegHeart, FaRobot } from "react-icons/fa"; // ✅ FontAwesome Icons
-import { useNavigate } from "react-router-dom"; // ✅ Navigation hook
+import { FaRegHeart, FaRobot } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { notifications } from "../assets/data";
 
 const MobileHeader = () => {
   const [activeIcon, setActiveIcon] = useState(null);
+  const [hasUnread, setHasUnread] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setHasUnread(true);
+    
+  }, []);
+
+  
+
   const handleClick = (icon) => {
+     
     setActiveIcon(icon);
-    if (icon === "heart") navigate("/notifications");  // ✅ Notification redirect
-    if (icon === "ai") navigate("/aichatbot");         // ✅ AI chatbot redirect
+    setHasUnread(false);
+   
+
+    if (icon === "heart") {
+      navigate("/notifications");
+     
+     
+    }
+
+    if (icon === "ai") navigate("/aichatbot");
   };
 
   return (
@@ -23,18 +41,25 @@ const MobileHeader = () => {
       {/* Icons */}
       <div className="flex items-center gap-4">
         {/* Heart / Notification */}
-        <button
-          onClick={() => handleClick("heart")}
-          className="relative p-2 rounded-full hover:bg-gray-100 transition"
-        >
-          <FaRegHeart
-            className={`h-6 w-6 transition-colors duration-200 ${
-              activeIcon === "heart" ? "text-[var(--primary)]" : "text-gray-700 hover:text-[var(--primary)]"
-            }`}
-          />
+        <div className="relative">
+          <button
+            onClick={() => handleClick("heart")}
+            className="p-2 rounded-full hover:bg-gray-100 transition relative"
+          >
+            <FaRegHeart
+              className={`h-6 w-6 transition-colors duration-200 ${
+                activeIcon === "heart"
+                  ? "text-[var(--primary)]"
+                  : "text-gray-700 hover:text-[var(--primary)]"
+              }`}
+            />
+          </button>
+
           {/* Notification Badge */}
-          <span className="absolute top-0 right-0 inline-flex h-2 w-2 rounded-full bg-red-500"></span>
-        </button>
+          {hasUnread && (
+            <span className="absolute top-1 -right-1 h-2.5 w-2.5 bg-red-500 rounded-full border border-white"></span>
+          )}
+        </div>
 
         {/* AI Robot */}
         <button
@@ -43,7 +68,9 @@ const MobileHeader = () => {
         >
           <FaRobot
             className={`h-6 w-6 transition-colors duration-200 ${
-              activeIcon === "ai" ? "text-[var(--primary)]" : "text-gray-700 hover:text-[var(--primary)]"
+              activeIcon === "ai"
+                ? "text-[var(--primary)]"
+                : "text-gray-700 hover:text-[var(--primary)]"
             }`}
           />
         </button>

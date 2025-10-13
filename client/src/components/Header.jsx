@@ -53,7 +53,7 @@ const Header = () => {
           {open && (
             <div className="absolute top-14 right-0 bg-white shadow-lg rounded-lg overflow-hidden w-44 animate-fadeIn z-50">
               <Link
-                to="/profile"
+                to="/profile/:id"
                 onClick={() => setOpen(false)}
                 className="block px-4 py-2 text-sm text-[var(--dark)] hover:bg-[var(--bg)] hover:text-[var(--primary)]"
               >

@@ -33,7 +33,8 @@ export const posts = [
       likes: 120,
       comments: [
         { user: "Riya", text: "Wow! This feels so calming 🌅" },
-        { user: "Kabir", text: "Amazing color blend!" }
+        { user: "Kabir", text: "Amazing color blend!" },
+        { user: "sk", text: "Amazing color blend wowww!" }
       ]
     },
     {
@@ -384,10 +385,77 @@ export const posts = [
       title: "Golden Hour",
       createdBy: { name: "Tanvi Sharma", profileImage: "https://randomuser.me/api/portraits/women/16.jpg" },
       mood: "Warm",
+      likes:0,
       category: "Portrait",
       description: "Soft sunlight"
     },
     
 ]  
-
-
+ export const notifications = [
+  {
+    id: 1,
+    user: "Aman",
+    type: "like",
+    postImage: post11, // 🔹 image या video thumbnail
+    time: "2h ago",
+  },
+  {
+    id: 2,
+    user: "Priya",
+    type: "comment",
+    text: "Nice work!",
+    postImage: post10,
+    time: "5h ago",
+  },
+  {
+    id: 3,
+    user: "Rohan",
+    type: "like",
+    postImage: post1, // video thumbnail
+    time: "1d ago"
+  },
+  {
+    id: 4,
+    user: "Aman",
+    type: "like",
+    postImage: post11, // 🔹 image या video thumbnail
+    time: "2h ago",
+  },
+  {
+    id: 5,
+    user: "Priya",
+    type: "comment",
+    text: "Nice work!",
+    postImage: post10,
+    time: "5h ago",
+  },
+  {
+    id: 6,
+    user: "Rohan",
+    type: "like",
+    postImage: post1, // video thumbnail
+    time: "1d ago"
+  },
+  {
+    id: 7,
+    user: "Aman",
+    type: "like",
+    postImage: post11, // 🔹 image या video thumbnail
+    time: "2h ago",
+  },
+  {
+    id: 8,
+    user: "Priya",
+    type: "comment",
+    text: "Nice work!",
+    postImage: post10,
+    time: "5h ago",
+  },
+  {
+    id: 9,
+    user: "Rohan",
+    type: "like",
+    postImage: post1, // video thumbnail
+    time: "1d ago"
+  },
+];

@@ -16,6 +16,8 @@ import HomePage from './pages/HomePage'
 import ProfilePage from './pages/ProfilePage';
 import UploadPage from './pages/UploadPage'
 import Notifications from './pages/Notifications';
+import PostPage from './pages/PostPage';
+import AddChallenge from './pages/AddChallange';
 
 
 
@@ -82,9 +84,20 @@ const App = () => {
     <Route path="/explore" element={<ExplorePage />} />
     <Route path="/challange" element={<ChallangePage />} />
     <Route path="/aichatbot" element={<Aichatbot />} />
-    <Route path="/profile" element={<ProfilePage />} />
+    <Route path="/profile/:id" element={<ProfilePage />} />
     <Route path="/upload" element={<UploadPage />} />
+    <Route path="/post/:id" element={<PostPage />} />
     <Route path="/notifications" element={<Notifications />} />
+    <Route
+  path="/add-challenge"
+  element={
+    <PrivateRoute adminOnly={false}>
+      <AddChallenge />
+    </PrivateRoute>
+  }
+/>
+
+
   </Route>
 </Routes>
 
