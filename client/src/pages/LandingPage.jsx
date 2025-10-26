@@ -41,8 +41,8 @@ const LandingPage = () => {
       <div className="body-2 w-full h-full lg:w-full md:w-full flex lg:gap-2 md:gap-10 gap-10 flex-col xl:flex-row items-center justify-around bg-[var(--bg)] relative">
         
         {/* Left Side */}
-        <div className="h-full w-full px-10 lg:w-1/3 flex flex-col items-center justify-center spining-logo">
-          <div className="w-full lg:max-w-lg flex flex-col items-center justify-center gap-5 relative artverse">
+        <div className="h-full w-full px-10 lg:w-1/2 flex flex-col items-center justify-center spining-logo">
+          <div className="w-[90%] lg:max-w-lg flex flex-col items-center justify-center gap-5 relative artverse">
             <img className="z-10 art-verse" src={artverseImg} alt="ArtVerse Logo" />
           </div>
         </div>

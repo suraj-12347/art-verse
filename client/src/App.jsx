@@ -18,6 +18,7 @@ import UploadPage from './pages/UploadPage'
 import Notifications from './pages/Notifications';
 import PostPage from './pages/PostPage';
 import AddChallenge from './pages/AddChallange';
+import Settings from './pages/Settings';
 
 
 
@@ -28,8 +29,9 @@ import AddChallenge from './pages/AddChallange';
 
 
 function Layout() {
-  const location = useLocation(); // ✅ Current route
-  const isHome = location.pathname === "/home"; // ✅ Check if on /home
+  const location = useLocation();
+  const isHome = location.pathname === "/home";
+  const isAichatbot = location.pathname === "/aichatbot"; // ✅ check for AI chatbot page
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
@@ -41,12 +43,14 @@ function Layout() {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col">
         {/* Desktop Header */}
-        <header className="hidden md:block w-full">
-          <Header />
-        </header>
+        {!isAichatbot && (
+          <header className="hidden md:block w-full">
+            <Header />
+          </header>
+        )}
 
-        {/* Mobile Header only on /home */}
-        {isHome && (
+        {/* Mobile Header only on /home and not aichatbot */}
+        {!isAichatbot && isHome && (
           <header className="md:hidden">
             <MobileHeader />
           </header>
@@ -69,7 +73,6 @@ function Layout() {
 
 
 
-
 const App = () => {
   return (
     <main className='w-[98%]  bg-[var(--bg)]'>
@@ -88,9 +91,11 @@ const App = () => {
     <Route path="/upload" element={<UploadPage />} />
     <Route path="/post/:id" element={<PostPage />} />
     <Route path="/notifications" element={<Notifications />} />
+    <Route path="/settings" element={<Settings />} />
+    {/* <Route path="/edit-profile" element={<EditProfile />} /> */}
     <Route
-  path="/add-challenge"
-  element={
+    path="/add-challenge"
+     element={
     <PrivateRoute adminOnly={false}>
       <AddChallenge />
     </PrivateRoute>

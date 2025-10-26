@@ -33,11 +33,11 @@
   border: 2px solid #f3f4f6;
 }
 
-html, body {
+.ai-input,html, body {
   -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
   scrollbar-width: none; /* Firefox hide scrollbar */
 }
-body::-webkit-scrollbar {
+.ai-input,body::-webkit-scrollbar {
   display: hidden; /* Chrome/Edge hide scrollbar */
 }
 /* Mobile only */
@@ -126,6 +126,25 @@ body::-webkit-scrollbar {
   .challange-page-content{
     margin: 0 !important;
     
+  }
+ 
+
+}
+
+
+@media (max-width: 500px) {
+    
+  .ai-page{
+   padding: 0 !important;
+   margin: 0 !important;
+   width: 100% !important;
+   height: 100vh;
+  
+  
+   
+   
+
+
   }
  
 

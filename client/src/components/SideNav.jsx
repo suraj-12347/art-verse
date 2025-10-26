@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import logo from "../assets/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   FaHome,
   FaSearch,
@@ -11,6 +11,7 @@ import {
   FaBell,
 } from "react-icons/fa";
 import NotificationsDropdown from "../components/NotificationsDropdown";
+import SettingsDropdown from "../components/SettingsDropdown"; // import dropdown
 import { notifications } from "../assets/data";
 
 const topNavItems = [
@@ -22,25 +23,40 @@ const topNavItems = [
   { label: "Notifications", icon: FaBell, href: null },
 ];
 
-const bottomNavItem = { label: "Setting", icon: FaCog, href: "/setting" };
+const bottomNavItem = { label: "Settings", icon: FaCog, href: "/settings" };
 
 const SideNav = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showSettingsDropdown, setShowSettingsDropdown] = useState(false);
   const bellRef = useRef(null);
+  const settingsRef = useRef(null);
+  const navigate = useNavigate();
 
-  // ✅ dropdown outside click close
+  // ✅ Close dropdowns on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (bellRef.current && !bellRef.current.contains(e.target)) {
         setShowDropdown(false);
+      }
+      if (settingsRef.current && !settingsRef.current.contains(e.target)) {
+        setShowSettingsDropdown(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const handleSettingsClick = () => {
+    if (window.innerWidth < 768) {
+      navigate("/settings"); // Mobile view → full page
+    } else {
+      setShowSettingsDropdown((prev) => !prev); // Desktop → dropdown
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 h-screen w-40 bg-white backdrop-blur-sm flex flex-col justify-between py-3 z-50">
+      {/* Top Nav */}
       <div className="flex flex-col items-center">
         <img src={logo} alt="logo" className="w-30 h-20 mb-15" />
 
@@ -100,20 +116,22 @@ const SideNav = () => {
         </ul>
       </div>
 
-      <div className="flex flex-col items-center mb-10 relative group">
-        <NavLink
-          to={bottomNavItem.href}
-          className={({ isActive }) =>
-            `flex flex-col items-center text-2xl mb-4 transition-transform duration-200 transform hover:scale-110 
-            ${
-              isActive
-                ? "text-[var(--primary)]"
-                : "text-gray-700 hover:text-[var(--primary)]"
-            }`
-          }
+      {/* Bottom Settings Icon */}
+      <div
+        className="flex flex-col items-center mb-10 relative group"
+        ref={settingsRef}
+      >
+        <button
+          onClick={handleSettingsClick}
+          className={`flex flex-col items-center text-2xl mb-4 transition-transform duration-200 transform hover:scale-110
+            text-gray-700 hover:text-[var(--primary)]
+          `}
         >
           <bottomNavItem.icon />
-        </NavLink>
+        </button>
+
+        {/* Desktop Dropdown */}
+        {showSettingsDropdown && <SettingsDropdown />}
 
         <span className="absolute left-23 top-1/3 -translate-y-1/2 ml-2 px-2 py-1 text-xs rounded bg-[var(--dark)] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
           {bottomNavItem.label}

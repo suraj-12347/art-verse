@@ -15,7 +15,7 @@
     content: "" !important;
     position: absolute !important;
     top: 1;
-    left: 50px !important;
+    left: 120px !important;
     width: 300px !important;
     height: 300px !important;
     background: url('../assets/mandala.png') no-repeat center center !important;
@@ -72,7 +72,10 @@
    
   }
   @media (max-width: 500px) {
-    
+    .login-page{
+      padding: 15px;
+      margin: 0;
+    }
     .spining-logo{
         display: none;
     }

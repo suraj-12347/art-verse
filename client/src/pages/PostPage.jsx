@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
-import { FaHeart, FaRegHeart, FaCommentAlt } from "react-icons/fa";
+import { FaHeart, FaRegHeart, FaCommentAlt,FaBookmark } from "react-icons/fa";
 import { posts as staticPosts } from "../assets/data";
 import { setPosts } from "../redux/slices/postSlice";
 import Loader from "../components/Loader";
@@ -22,6 +22,7 @@ const PostPage = () => {
   const [commentInput, setCommentInput] = useState("");
   const [showMenu, setShowMenu] = useState(false);
   const [showComments, setShowComments] = useState(false);
+  const [saved, setSaved] = useState(false);
 
   const handleLike = () => setLiked(!liked);
 
@@ -132,6 +133,12 @@ const PostPage = () => {
 
               {/* Description */}
               <p className="mt-2 text-[var(--dark)]">{post.description}</p>
+              <div>
+               <button onClick={() => setSaved(!saved)}>
+                <FaBookmark className={saved ? "text-[var(--primary)]" : "text-[var(--secondary)]" } />
+               </button>
+              </div>
+
             </div>
           </div>
 
@@ -186,7 +193,7 @@ const PostPage = () => {
               placeholder="Add a comment..."
               className="w-full bg-[var(--bg)] text-[var(--dark)] h-10 p-2 rounded-lg outline-none"
             />
-           <Button onClick={handleCommentSubmit} text="Post" />
+           <Button onClick={handleCommentSubmit} text="Post" color="primary" />
           </div>
         </div>
       </div>

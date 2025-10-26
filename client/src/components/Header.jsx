@@ -59,13 +59,7 @@ const Header = () => {
               >
                 Your Profile
               </Link>
-              <Link
-                to="/setting"
-                onClick={() => setOpen(false)}
-                className="block px-4 py-2 text-sm text-[var(--dark)] hover:bg-[var(--bg)] hover:text-[var(--primary)]"
-              >
-                Settings
-              </Link>
+              
               <button
                 onClick={handleLogout}   // ✅ Updated
                 className="w-full text-left px-4 py-2 text-sm text-[var(--dark)] hover:bg-[var(--bg)] hover:text-[var(--primary)]"
